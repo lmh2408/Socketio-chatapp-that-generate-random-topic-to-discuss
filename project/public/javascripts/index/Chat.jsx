@@ -66,6 +66,7 @@ class Chat extends React.Component {
     return(
       <div className="chat">
         <div className='chatHeader chatHeaderSlideIn'>
+          <a href="/"><div>x</div></a>
           <span>{this.props.word}</span>
         </div>
 

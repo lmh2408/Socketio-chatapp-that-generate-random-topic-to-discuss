@@ -17,15 +17,14 @@ class Root extends React.Component {
 
     socket.on('partnerDisconnected', ()=>{
       socket.emit('leaveRoom', ()=>{
-        this.setState({ display: 'home' });
+        this.setState({ display: 'disconnect' });
       });
     });
 
     socket.on('disconnect', (reason)=>{
-      this.setState({ display: 'home' });
-      if (reason === 'io server disconnect') {
-        socket.connect();
-      }
+      this.setState({ display: 'disconnect' });
+      socket.disconnect();
+
     });
   }
 
@@ -55,13 +54,14 @@ class Root extends React.Component {
   };
 
   render() {
-    if (this.state.display == 'home') {
+    var status = this.state.display;
+    if ( status == 'home') {
       return (
         <Home
           joinRoom={this.joinRoom}/>
       );
     }
-    else if (this.state.display == 'waiting') {
+    else if (status == 'waiting') {
       return (
         <Wait
           found={this.state.found}
@@ -69,10 +69,15 @@ class Root extends React.Component {
           goToRoom={this.goToRoom}/>
       );
     }
-    else if (this.state.display == 'talking') {
+    else if (status == 'talking') {
       return (
         <Chat
           word={this.state.word}/>
+      );
+    }
+    else if (status == 'disconnect') {
+      return (
+        <Disconnect />
       );
     }
   }

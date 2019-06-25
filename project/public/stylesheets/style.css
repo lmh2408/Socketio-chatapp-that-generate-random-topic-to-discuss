@@ -176,7 +176,12 @@ body {
     font-weight: bolder;
     font-size: 1.1em;
     overflow: hidden;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    z-index: 2; }
+    .chat .chatHeader a:first-child div, .chat .chatHeader a:first-child:hover div {
+      position: absolute;
+      left: 0.8em;
+      color: white; }
   .chat .chatArray {
     padding-top: 5em;
     padding-bottom: 10em;
@@ -274,6 +279,31 @@ body {
     bottom: -19%; }
   to {
     bottom: 0%; } }
+
+.disconnect {
+  color: white;
+  text-align: center;
+  font-family: 'open sans', sans serif;
+  background: #171717;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+  .disconnect span {
+    display: block;
+    position: absolute;
+    top: 24%;
+    width: 100%; }
+  .disconnect div {
+    position: absolute;
+    width: 100%;
+    top: 38%; }
+    .disconnect div button, .disconnect div button:hover {
+      background: #5c0303;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      height: 2.9em;
+      width: 11em; }
 
 .disappearFadeOut {
   animation: disappearFadeOut 1s forwards; }
