@@ -30,11 +30,9 @@ class Root extends React.Component {
   }
 
   joinRoom = ()=>{
-    // play animation (1 sec)
-    document.body.style.animationPlayState = 'running';
-    // console.log(document.body.style.animationPlayState);
-    var home = document.querySelector('#home');
-    home.style.animation = 'homeFadeOut 1s forwards';
+    document.body.classList.add('bodyAnimation');
+    var home = document.querySelector('.home');
+    home.classList.add('homeFadeOut');
 
     // emit socket when animation end
     home.addEventListener('animationend', ()=>{

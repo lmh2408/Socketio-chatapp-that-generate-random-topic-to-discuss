@@ -5,7 +5,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div id='home'>
+      <div class='home homeFadeIn'>
         <div>
           <span>Discuss a random topic with internet strangers</span>
         </div>

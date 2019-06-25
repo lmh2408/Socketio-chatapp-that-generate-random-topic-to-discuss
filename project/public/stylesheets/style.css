@@ -4,12 +4,13 @@ html {
 body {
   background-image: linear-gradient(180deg, #07413A 47%, #1c0126 94.27%);
   background-size: 100% 200%;
-  background-position: 0 100%;
+  background-position: 0 100%; }
+
+.bodyAnimation {
   animation-name: bgChange;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  animation-play-state: paused; }
+  animation-timing-function: ease; }
 
 @keyframes bgChange {
   from {
@@ -17,10 +18,10 @@ body {
   to {
     background-position: 0% 0%; } }
 
-#home div {
+.home div {
   padding: 0.2em; }
 
-#home div:first-child {
+.home div:first-child {
   position: absolute;
   top: 20%;
   color: white;
@@ -29,12 +30,12 @@ body {
   width: 100%;
   font-size: 1.6rem; }
 
-#home div:nth-child(2) {
+.home div:nth-child(2) {
   position: absolute;
   top: 40%;
   width: 100%;
   text-align: center; }
-  #home div:nth-child(2) button {
+  .home div:nth-child(2) button {
     border-radius: 6px;
     height: 2.9em;
     width: 12em;
@@ -46,12 +47,12 @@ body {
     font-family: 'Open Sans', sans-serif;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
 
-#home div:nth-child(3) {
+.home div:nth-child(3) {
   position: absolute;
   bottom: 5%;
   text-align: center;
   width: 100%; }
-  #home div:nth-child(3) img {
+  .home div:nth-child(3) img {
     width: 3em; }
 
 @media (min-width: 768px) {
@@ -60,8 +61,19 @@ body {
   #home div:nth-child(2) {
     top: 35%; } }
 
-#home {
+.homeFadeIn {
   animation: homeFadeIn 1s forwards; }
+
+@keyframes homeFadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.homeFadeOut {
+  animation-name: homeFadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
 
 @keyframes homeFadeOut {
   from {
@@ -69,12 +81,6 @@ body {
   to {
     opacity: 0;
     display: none; } }
-
-@keyframes homeFadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
 
 .wait {
   position: absolute;
@@ -156,6 +162,118 @@ body {
     top: 39%; }
     #foundTagline p:nth-child(3) {
       margin-top: 2em; } }
+
+.chat {
+  font-family: 'open sans', sans serif; }
+  .chat .chatHeader {
+    position: fixed;
+    width: 100%;
+    background: #610963;
+    height: 2.7em;
+    text-align: center;
+    color: white;
+    padding-top: 0.4em;
+    font-weight: bolder;
+    font-size: 1.1em;
+    overflow: hidden;
+    letter-spacing: 2px; }
+  .chat .chatArray {
+    padding-top: 5em;
+    padding-bottom: 10em;
+    word-wrap: break-word;
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+    font-size: 0.9em;
+    color: white;
+    letter-spacing: 0.3px; }
+  .chat .chatSend {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+    background: #121212;
+    padding-top: 1em; }
+    .chat .chatSend form {
+      margin-bottom: 1em; }
+      .chat .chatSend form textarea {
+        background: #ECECEC;
+        border: 1px solid #4A4A4A;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        padding: 0.2em;
+        font-size: 0.9em;
+        width: 19em;
+        height: 5em; }
+      .chat .chatSend form button {
+        background: #19A0BD;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+        border: none;
+        color: white;
+        height: 2.7em;
+        width: 4em;
+        font-size: 0.9em;
+        margin-left: 0.7em;
+        position: relative;
+        bottom: 1.7em; }
+
+.chatMsg {
+  margin-bottom: 1.5em; }
+  .chatMsg p:nth-child(2) {
+    background: #031a2463;
+    padding: 0.5em 0.4em;
+    border-radius: 6px; }
+
+.chatMsgSelf p:first-child {
+  margin-bottom: 0.2em;
+  margin-left: 0.4em; }
+
+.chatMsgOther p:first-child {
+  text-align: right;
+  margin-bottom: 0.2em;
+  margin-right: 0.4em; }
+
+.chatMsgOther p:nth-child(2) {
+  background: #100c3529; }
+
+@media (min-width: 768px) {
+  .chatArray {
+    width: 700px;
+    margin: 0 auto; } }
+
+.chatHeaderSlideIn {
+  animation-name: chatHeaderSlideIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; }
+
+@keyframes chatHeaderSlideIn {
+  from {
+    top: -8%; }
+  to {
+    top: 0%; } }
+
+.chatMessageAppear {
+  animation-name: chatMessageAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; }
+
+@keyframes chatMessageAppear {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.chatSendAppear {
+  animation-name: chatSendAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; }
+
+@keyframes chatSendAppear {
+  from {
+    bottom: -19%; }
+  to {
+    bottom: 0%; } }
 
 .disappearFadeOut {
   animation: disappearFadeOut 1s forwards; }

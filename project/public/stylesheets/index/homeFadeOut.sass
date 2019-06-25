@@ -1,8 +1,18 @@
-// name duration timing-function delay iteration-count direction fill-mode play-state
-
-#home
+.homeFadeIn
   animation: homeFadeIn 1s forwards
 
+@keyframes homeFadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1
+
+
+.homeFadeOut
+  animation-name: homeFadeOut
+  animation-duration: 1s
+  animation-fill-mode: forwards
 
 @keyframes homeFadeOut
   from
@@ -11,10 +21,3 @@
   to
     opacity: 0
     display: none
-
-@keyframes homeFadeIn
-  from
-    opacity: 0
-
-  to
-    opacity: 1

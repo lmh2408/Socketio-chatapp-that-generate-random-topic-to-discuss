@@ -45,32 +45,35 @@ class Chat extends React.Component {
     var msgArray = [];
     for (let i = 0, l = msglist.length; i < l; i++) {
 
-      var msgClass;
+      var msgClass = 'chatMsg chatMessageAppear ';
+      var sender;
       if (msglist[i].sender == 'self') {
-        msgClass = 'chatMsgSelf'
+        msgClass += 'chatMsgSelf';
+        sender = <p><b>You</b></p>;
       }
       else {
-        msgClass = 'chatMsgOther'
+        msgClass += 'chatMsgOther';
+        sender = <p><b>Other</b></p>;
       }
 
       var msg = <p>{ msglist[i].message }</p>;
 
-      var html = <div className={msgClass} id={i}>{msg}</div>;
+      var html = <div className={msgClass} key={i}>{sender}{msg}</div>;
       msgArray.push(html);
 
     }
 
     return(
       <div className="chat">
-        <div>
+        <div className='chatHeader chatHeaderSlideIn'>
           <span>{this.props.word}</span>
         </div>
 
-        <div>
+        <div className='chatArray'>
           {msgArray}
         </div>
 
-        <div>
+        <div className='chatSend chatSendAppear'>
           <form action="" onSubmit={this.sendMessage}>
             <textarea value={this.state.input} onChange={this.handleInput}></textarea>
             <button type='submit'>Send</button>
