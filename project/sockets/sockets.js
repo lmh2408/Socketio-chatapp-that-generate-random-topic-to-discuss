@@ -1,3 +1,5 @@
+var validator = require('validator');
+
 module.exports = (io)=>{
   io.on('connection', (socket)=>{
 
@@ -10,8 +12,12 @@ module.exports = (io)=>{
     });
 
     socket.on('sendMessage', (data, callback)=>{
-      socket.to(socket.roomId).emit('receiveMessage', data);
-      return callback()
+      data.message = validator.trim(data.message);
+      if (data.message != '') {
+        socket.to(socket.roomId).emit('receiveMessage', data);
+        return callback();
+      }
+      return callback('empty')
     });
 
     socket.on('disconnect', ()=>{

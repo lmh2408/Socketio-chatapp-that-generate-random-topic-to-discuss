@@ -52,7 +52,7 @@ body {
   bottom: 5%;
   text-align: center;
   width: 100%; }
-  .home div:nth-child(3) img {
+  .home div:nth-child(3) a img {
     width: 3em; }
 
 @media (min-width: 768px) {

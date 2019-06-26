@@ -15,7 +15,9 @@ class Home extends React.Component {
         </div>
 
         <div>
-          <img src="/images/GitHub-Mark-White.svg" alt="Github"/>
+          <a href="https://github.com/lmh2408/Socketio-chatapp-that-generate-random-topic-to-discuss">
+            <img src="/images/GitHub-Mark-White.svg" alt="Github"/>
+          </a>
         </div>
       </div>
     );
