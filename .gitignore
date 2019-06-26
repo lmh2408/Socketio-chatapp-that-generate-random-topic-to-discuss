@@ -1,5 +1,7 @@
 runServer.bat
 animation.html
+update_jsx.bat
+
 # Logs
 logs
 *.log
